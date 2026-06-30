@@ -1,0 +1,863 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    min-height:100vh;
+    overflow-x:hidden;
+    color:#fff;
+
+    background:linear-gradient(
+        135deg,
+        #170030,
+        #32005f,
+        #52008a,
+        #1d4ed8,
+        #4f46e5
+    );
+
+    background-size:400% 400%;
+    animation:gradientMove 16s ease infinite;
+
+    position:relative;
+}
+
+body::before,
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    border-radius:50%;
+
+    filter:blur(100px);
+
+    opacity:.45;
+
+    z-index:-2;
+}
+
+body::before{
+
+    width:420px;
+    height:420px;
+
+    background:#8b5cf6;
+
+    top:-120px;
+    left:-100px;
+
+    animation:blobLeft 14s ease-in-out infinite alternate;
+}
+
+body::after{
+
+    width:350px;
+    height:350px;
+
+    background:#2563eb;
+
+    bottom:-120px;
+    right:-80px;
+
+    animation:blobRight 18s ease-in-out infinite alternate;
+}
+
+/* Third Blob */
+
+.wrapper::before{
+
+    content:"";
+
+    position:fixed;
+
+    width:260px;
+    height:260px;
+
+    border-radius:50%;
+
+    background:#ec4899;
+
+    filter:blur(90px);
+
+    opacity:.35;
+
+    top:45%;
+    left:60%;
+
+    z-index:-2;
+
+    animation:blobCenter 12s ease-in-out infinite alternate;
+}
+
+/* ==============================
+   MAIN WRAPPER
+============================== */
+
+.wrapper{
+
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(0,0,0,.10);
+
+    backdrop-filter:blur(8px);
+}
+
+/* ==============================
+   NAVBAR
+============================== */
+
+.nav{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:85px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 70px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(20px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    z-index:100;
+}
+
+/* ==============================
+   LOGO
+============================== */
+
+.nav-logo p{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:white;
+
+    letter-spacing:2px;
+}
+
+/* ==============================
+   NAVIGATION LINKS
+============================== */
+
+.nav-menu ul{
+
+    display:flex;
+
+    gap:35px;
+
+    list-style:none;
+}
+
+.link{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:16px;
+
+    font-weight:500;
+
+    transition:.3s;
+}
+
+.link:hover{
+
+    color:#d8b4fe;
+}
+
+.active{
+
+    color:#d8b4fe;
+
+    border-bottom:2px solid #d8b4fe;
+
+    padding-bottom:6px;
+}
+
+/* ==============================
+   TOP BUTTONS
+============================== */
+
+.nav-button{
+
+    display:flex;
+
+    gap:12px;
+}
+
+.btn{
+
+    width:100px;
+    height:45px;
+
+    border:none;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-size:15px;
+    font-weight:600;
+
+    background:rgba(255,255,255,.10);
+
+    backdrop-filter:blur(20px);
+
+    transition:.35s;
+}
+
+.btn:hover{
+
+    transform:translateY(-3px);
+
+    background:rgba(255,255,255,.18);
+
+    box-shadow:0 0 25px rgba(255,255,255,.15);
+}
+
+.white-btn{
+
+    background:linear-gradient(
+        135deg,
+        #7c3aed,
+        #4f46e5
+    ) !important;
+}
+
+/* ==============================
+   MENU ICON
+============================== */
+
+.nav-menu-btn{
+
+    display:none;
+}
+/* ==========================================
+   FORM CONTAINER
+========================================== */
+
+.form-box{
+
+    position:relative;
+
+    width:520px;
+    height:470px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+    margin-top:45px;
+    margin-left:40px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(30px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.35);
+
+    z-index:5;
+}
+
+/* ==========================================
+   LOGIN & REGISTER PANELS
+========================================== */
+
+.login-container,
+.register-container{
+
+    position:absolute;
+
+    width:500px;
+
+    display:flex;
+    flex-direction:column;
+
+    transition:.5s ease-in-out;
+}
+
+.login-container{
+
+    left:10px;
+}
+
+.register-container{
+
+    right:-510px;
+}
+
+/* ==========================================
+   HEADINGS
+========================================== */
+
+.top{
+
+    margin-bottom:15px;
+}
+
+.top span{
+
+    display:flex;
+    justify-content:center;
+
+    color:#d1d5db;
+
+    font-size:14px;
+}
+
+.top span a{
+
+    color:#d8b4fe;
+
+    text-decoration:none;
+
+    margin-left:5px;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.top span a:hover{
+
+    color:white;
+}
+
+header{
+
+    text-align:center;
+
+    font-size:38px;
+
+    font-weight:700;
+
+    margin-top:10px;
+    margin-bottom:30px;
+
+    background:linear-gradient(
+        90deg,
+        white,
+        #d8b4fe,
+        white
+    );
+
+    background-size:200%;
+
+    background-clip:text;
+    -webkit-background-clip:text;
+
+    color:transparent;
+    -webkit-text-fill-color:transparent;
+
+    animation:titleGlow 6s linear infinite;
+}
+
+/* ==========================================
+   INPUT BOXES
+========================================== */
+
+.input-box{
+
+    position:relative;
+
+    margin-bottom:20px;
+}
+
+.input-field{
+
+    width:100%;
+    height:55px;
+
+    padding:0 20px 0 50px;
+
+    border-radius:30px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    outline:none;
+
+    color:white;
+
+    font-size:15px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    transition:.3s;
+}
+
+.input-field::placeholder{
+
+    color:#d1d5db;
+}
+
+.input-field:focus{
+
+    border-color:#8b5cf6;
+
+    background:rgba(255,255,255,.12);
+
+    box-shadow:0 0 15px rgba(139,92,246,.4);
+}
+
+.input-box i{
+
+    position:absolute;
+
+    left:18px;
+    top:18px;
+
+    font-size:20px;
+
+    color:#d8b4fe;
+}
+
+/* ==========================================
+   SUBMIT BUTTON
+========================================== */
+
+.submit{
+
+    width:100%;
+    height:52px;
+
+    border:none;
+
+    border-radius:30px;
+
+    color:white;
+
+    font-size:16px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    background:linear-gradient(
+        135deg,
+        #7c3aed,
+        #4f46e5
+    );
+
+    transition:.35s;
+}
+
+.submit:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 0 30px rgba(124,58,237,.6);
+}
+
+/* ==========================================
+   REMEMBER / FORGOT
+========================================== */
+
+.two-col{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:18px;
+
+    font-size:14px;
+
+    color:#d1d5db;
+}
+
+.two-col .one{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+}
+
+.two-col a{
+
+    color:#d8b4fe;
+
+    text-decoration:none;
+
+    transition:.3s;
+}
+
+.two-col a:hover{
+
+    color:white;
+}
+
+/* ==========================================
+   CHECKBOX
+========================================== */
+
+input[type="checkbox"]{
+
+    accent-color:#8b5cf6;
+}
+/* ==========================================
+   ANIMATED BACKGROUND
+========================================== */
+
+@keyframes gradientMove{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+/* ==========================================
+   GLOWING BLOBS
+========================================== */
+
+@keyframes blobLeft{
+
+    from{
+        transform:translate(0,0) scale(1);
+    }
+
+    to{
+        transform:translate(80px,70px) scale(1.25);
+    }
+}
+
+@keyframes blobRight{
+
+    from{
+        transform:translate(0,0) scale(1);
+    }
+
+    to{
+        transform:translate(-100px,-80px) scale(1.2);
+    }
+}
+
+@keyframes blobCenter{
+
+    from{
+        transform:translate(0,0) scale(1);
+    }
+
+    to{
+        transform:translate(-70px,70px) scale(1.3);
+    }
+}
+
+/* ==========================================
+   TITLE SHIMMER
+========================================== */
+
+@keyframes titleGlow{
+
+    0%{
+        background-position:0%;
+    }
+
+    100%{
+        background-position:200%;
+    }
+}
+
+/* ==========================================
+   FORM ANIMATION
+========================================== */
+
+.form-box{
+
+    animation:fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(60px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================
+   FLOATING PARTICLES
+========================================== */
+
+.wrapper::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background-image:
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,.18) 2px, transparent 3px),
+        radial-gradient(circle at 80% 30%, rgba(255,255,255,.15) 2px, transparent 3px),
+        radial-gradient(circle at 60% 80%, rgba(255,255,255,.15) 2px, transparent 3px),
+        radial-gradient(circle at 35% 65%, rgba(255,255,255,.12) 2px, transparent 3px),
+        radial-gradient(circle at 90% 75%, rgba(255,255,255,.15) 2px, transparent 3px);
+
+    animation:particles 18s linear infinite;
+
+    opacity:.8;
+
+    z-index:-1;
+}
+
+@keyframes particles{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(-80px);
+
+    }
+
+}
+
+/* ==========================================
+   BUTTON PRESS EFFECT
+========================================== */
+
+.btn:active,
+.submit:active{
+
+    transform:scale(.97);
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+
+    background:#170030;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#7c3aed;
+
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#8b5cf6;
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:900px){
+
+    .nav{
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:85px;
+
+    display:grid;
+
+    grid-template-columns:
+        220px
+        1fr
+        260px;
+
+    align-items:center;
+
+    padding:0 40px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(20px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+    .nav-menu{
+
+    display:flex;
+
+    justify-content:center;
+}
+
+.nav-menu ul{
+
+    display:flex;
+
+    gap:55px;
+
+    list-style:none;
+}
+
+    .nav-menu.responsive{
+
+        display:flex;
+
+        position:absolute;
+
+        top:85px;
+        left:0;
+
+        width:100%;
+
+        background:rgba(20,20,40,.85);
+
+        backdrop-filter:blur(25px);
+
+        justify-content:center;
+
+        padding:25px 0;
+    }
+
+    .nav-menu.responsive ul{
+
+        flex-direction:column;
+
+        gap:25px;
+
+        text-align:center;
+    }
+
+    .nav-menu-btn{
+
+        display:block;
+    }
+
+    .nav-menu-btn i{
+
+        font-size:28px;
+
+        cursor:pointer;
+
+        color:white;
+    }
+
+    .form-box{
+
+        width:95%;
+
+        height:auto;
+
+        padding:40px 20px;
+    }
+
+    .login-container,
+    .register-container{
+
+        width:100%;
+    }
+}
+
+.login-container,
+.register-container{
+
+    padding:0 25px;
+}
+
+@media(max-width:540px){
+
+    header{
+
+        font-size:30px;
+    }
+
+    .btn{
+
+        width:110px;
+
+        font-size:13px;
+    }
+
+    .input-field{
+
+        font-size:14px;
+    }
+
+    .submit{
+
+        height:48px;
+    }
+
+    .two-col{
+
+        flex-direction:column;
+
+        gap:12px;
+
+        align-items:flex-start;
+    }
+}

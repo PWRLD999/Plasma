@@ -1,0 +1,594 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#090018;
+    color:#fff;
+    overflow:hidden;
+}
+
+/* ===========================
+   BACKGROUND
+=========================== */
+
+.background{
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100vh;
+
+    overflow:hidden;
+
+    background:linear-gradient(
+        135deg,
+        #170030,
+        #32005f,
+        #52008a,
+        #1d4ed8,
+        #4f46e5
+    );
+
+    background-size:400% 400%;
+
+    animation:gradientMove 15s ease infinite;
+
+    z-index:-5;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+
+header{
+
+    width:100%;
+    height:90px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 80px;
+
+    position:absolute;
+    top:0;
+    left:0;
+
+    z-index:100;
+}
+
+.logo h2{
+
+    font-size:34px;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+nav{
+
+    display:flex;
+    align-items:center;
+    gap:35px;
+}
+
+nav a{
+
+    text-decoration:none;
+    color:white;
+
+    font-size:16px;
+    font-weight:500;
+
+    transition:.3s;
+}
+
+nav a:hover{
+
+    color:#c084fc;
+}
+
+/* ===========================
+   LOGIN BUTTON
+=========================== */
+
+.login-btn{
+
+    width:170px;
+    height:48px;
+
+    border:none;
+    border-radius:40px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-size:15px;
+    font-weight:600;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(20px);
+
+    transition:.35s;
+}
+
+/* ===========================
+   HERO SECTION
+=========================== */
+
+.hero{
+
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:40px;
+}
+
+/* ===========================
+   GLASS CARD
+=========================== */
+
+.glass-card{
+
+    width:720px;
+
+    padding:60px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(30px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.35);
+
+    text-align:center;
+}
+
+/* ===========================
+   TEXT
+=========================== */
+
+.small-text{
+
+    color:#d8b4fe;
+
+    font-size:18px;
+
+    letter-spacing:3px;
+
+    margin-bottom:18px;
+
+    text-transform:uppercase;
+}
+
+.glass-card h1{
+
+    font-size:72px;
+
+    line-height:82px;
+
+    font-weight:800;
+
+    margin-bottom:25px;
+}
+
+.description{
+
+    width:90%;
+
+    margin:auto;
+
+    font-size:18px;
+
+    line-height:32px;
+
+    color:#d1d5db;
+}
+
+/* ===========================
+   BUTTON GROUP
+=========================== */
+
+.buttons{
+
+    margin-top:45px;
+
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+
+/* ===========================
+   BLOBS
+=========================== */
+
+.blob{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(80px);
+
+    opacity:.55;
+}
+
+.blob1{
+
+    width:420px;
+    height:420px;
+
+    background:#8b5cf6;
+
+    top:-100px;
+    left:-100px;
+}
+
+.blob2{
+
+    width:350px;
+    height:350px;
+
+    background:#2563eb;
+
+    bottom:-80px;
+    right:-50px;
+}
+
+.blob3{
+
+    width:250px;
+    height:250px;
+
+    background:#ec4899;
+
+    top:45%;
+    left:60%;
+}
+/* ==========================================
+   ANIMATED GRADIENT
+========================================== */
+
+@keyframes gradientMove{
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+/* ==========================================
+   FLOATING BLOBS
+========================================== */
+
+.blob1{
+    animation:blob1 12s ease-in-out infinite alternate;
+}
+
+.blob2{
+    animation:blob2 15s ease-in-out infinite alternate;
+}
+
+.blob3{
+    animation:blob3 10s ease-in-out infinite alternate;
+}
+
+@keyframes blob1{
+    from{
+        transform:translate(0,0) scale(1);
+    }
+    to{
+        transform:translate(80px,60px) scale(1.25);
+    }
+}
+
+@keyframes blob2{
+    from{
+        transform:translate(0,0);
+    }
+    to{
+        transform:translate(-120px,-80px) scale(1.15);
+    }
+}
+
+@keyframes blob3{
+    from{
+        transform:translate(0,0);
+    }
+    to{
+        transform:translate(-70px,80px) scale(1.3);
+    }
+}
+
+/* ==========================================
+   PARTICLES
+========================================== */
+
+.particles span{
+
+    position:absolute;
+
+    width:10px;
+    height:10px;
+
+    background:rgba(255,255,255,.8);
+
+    border-radius:50%;
+
+    box-shadow:0 0 15px white;
+
+    animation:float 18s linear infinite;
+}
+
+.particles span:nth-child(1){left:5%;animation-delay:0s;}
+.particles span:nth-child(2){left:10%;animation-delay:2s;}
+.particles span:nth-child(3){left:18%;animation-delay:4s;}
+.particles span:nth-child(4){left:26%;animation-delay:6s;}
+.particles span:nth-child(5){left:34%;animation-delay:1s;}
+.particles span:nth-child(6){left:42%;animation-delay:8s;}
+.particles span:nth-child(7){left:50%;animation-delay:5s;}
+.particles span:nth-child(8){left:58%;animation-delay:7s;}
+.particles span:nth-child(9){left:66%;animation-delay:3s;}
+.particles span:nth-child(10){left:74%;animation-delay:10s;}
+.particles span:nth-child(11){left:82%;animation-delay:6s;}
+.particles span:nth-child(12){left:90%;animation-delay:2s;}
+.particles span:nth-child(13){left:15%;animation-delay:9s;}
+.particles span:nth-child(14){left:30%;animation-delay:11s;}
+.particles span:nth-child(15){left:45%;animation-delay:13s;}
+.particles span:nth-child(16){left:60%;animation-delay:15s;}
+.particles span:nth-child(17){left:75%;animation-delay:5s;}
+.particles span:nth-child(18){left:85%;animation-delay:7s;}
+.particles span:nth-child(19){left:95%;animation-delay:12s;}
+.particles span:nth-child(20){left:55%;animation-delay:14s;}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(110vh) scale(.2);
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    90%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-20vh) scale(1.5);
+        opacity:0;
+    }
+}
+
+/* ==========================================
+   BUTTON EFFECTS
+========================================== */
+
+.login-btn:hover{
+
+    transform:translateY(-3px);
+
+    background:rgba(255,255,255,.22);
+
+    box-shadow:0 0 30px rgba(255,255,255,.25);
+}
+
+.primary-btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 0 35px rgba(124,58,237,.6);
+}
+
+.secondary-btn:hover{
+
+    transform:translateY(-5px);
+
+    background:rgba(255,255,255,.12);
+
+    border-color:white;
+}
+
+/* ==========================================
+   CARD ANIMATION
+========================================== */
+
+.glass-card{
+
+    animation:fadeUp 1.2s ease;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(80px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ==========================================
+   TITLE EFFECT
+========================================== */
+
+.glass-card h1 {
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #d8b4fe,
+        #ffffff
+    );
+
+    background-size: 200%;
+
+    background-clip: text;          /* Standard property */
+    -webkit-background-clip: text;  /* Chrome, Edge, Safari */
+
+    color: transparent;             /* Standard */
+    -webkit-text-fill-color: transparent;
+
+    animation: textGlow 6s linear infinite;
+}
+
+@keyframes textGlow{
+
+    from{
+        background-position:0%;
+    }
+
+    to{
+        background-position:200%;
+    }
+}
+
+/* ==========================================
+   SCROLL INDICATOR
+========================================== */
+
+.scroll{
+
+    position:absolute;
+
+    left:50%;
+    bottom:30px;
+
+    transform:translateX(-50%);
+}
+
+.scroll span{
+
+    display:block;
+
+    width:25px;
+    height:40px;
+
+    border:2px solid white;
+
+    border-radius:20px;
+
+    position:relative;
+}
+
+.scroll span::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:8px;
+
+    transform:translateX(-50%);
+
+    width:5px;
+    height:8px;
+
+    border-radius:20px;
+
+    background:white;
+
+    animation:wheel 2s infinite;
+}
+
+@keyframes wheel{
+
+    from{
+        top:8px;
+        opacity:1;
+    }
+
+    to{
+        top:22px;
+        opacity:0;
+    }
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:900px){
+
+    header{
+
+        padding:25px;
+    }
+
+    nav a{
+
+        display:none;
+    }
+
+    .glass-card{
+
+        width:95%;
+        padding:40px 30px;
+    }
+
+    .glass-card h1{
+
+        font-size:50px;
+        line-height:60px;
+    }
+
+    .description{
+
+        width:100%;
+        font-size:16px;
+        line-height:28px;
+    }
+
+    .buttons{
+
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .primary-btn,
+    .secondary-btn{
+
+        width:220px;
+    }
+
+    .blob{
+
+        filter:blur(120px);
+    }
+}
